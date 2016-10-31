@@ -1,0 +1,40 @@
++ a 1000
++ b 1000
++ c 1000
++ d 1000
+!
+- a
+- b
+- c
+- d
+!
++ a 4000  // This will allocate successfully if Free and Merge work
++ b 10
++ c 5000
+!
+- a
+- b
++ a 4000
++ b 4000
+!
+- a
+!
++ a 8     // Minimum
++ b 0     // Edge case
++ c -4    // Invalid case - not required to handle error
+!
+- a
+- b
+- c       // In case your program rounds up to 8
++ a 200
++ b 200
++ c 200
++ d 200
+- b
+- c
++ e 400   // Should be in between a and d
+!
+- a
+- d       // Delete out of order, just for fun (and to test merge)
+- e
+<pre>!
